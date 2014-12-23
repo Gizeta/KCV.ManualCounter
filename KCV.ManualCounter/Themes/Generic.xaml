@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Styles/Colors.xaml" />
+
+        <ResourceDictionary Source="/KCV.ManualCounter;component/Themes/Generic.SubMenu.xaml" />
+        <ResourceDictionary Source="/KCV.ManualCounter;component/Themes/Generic.ContextMenuButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
