@@ -23,7 +23,7 @@ namespace Gizeta.KCV.ManualCounter
             {
                 Current = filePath.ReadXml<PluginSettings>();
             }
-            catch (Exception ex)
+            catch
             {
                 Current = GetInitialSettings();
             }
@@ -35,7 +35,7 @@ namespace Gizeta.KCV.ManualCounter
             {
                 this.WriteXml(filePath);
             }
-            catch (Exception ex) { }
+            catch { }
         }
 
         public static PluginSettings GetInitialSettings()

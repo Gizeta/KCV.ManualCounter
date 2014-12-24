@@ -1,0 +1,9 @@
+﻿<Window x:Class="Gizeta.KCV.ManualCounter.Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:Gizeta.KCV.ManualCounter.Views;assembly=KCV.ManualCounter"
+        xmlns:viewmodel="clr-namespace:Gizeta.KCV.ManualCounter.ViewModels;assembly=KCV.ManualCounter"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="root" Background="{DynamicResource ThemeBrushKey}">
+    </Grid>
+</Window>

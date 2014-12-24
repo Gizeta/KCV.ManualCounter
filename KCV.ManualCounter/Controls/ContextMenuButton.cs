@@ -10,7 +10,6 @@ namespace Gizeta.KCV.ManualCounter.Controls
     {
         private const string PART_MenuItem = "PART_MenuItem";
         private const string PART_Button = "PART_Button";
-        private Menu menu;
         private MenuItem topLevelHeaderMenuItem;
         private Button button;
 
