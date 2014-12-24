@@ -44,7 +44,8 @@ namespace Gizeta.KCV.ManualCounter
             {
                 Counters = new List<Counter>(),
                 CounterWidth = 200,
-                CounterHeight = 90
+                CounterHeight = 90,
+                SettingsVersion = 0
             };
         }
 
@@ -53,5 +54,7 @@ namespace Gizeta.KCV.ManualCounter
         public double CounterWidth { get; set; }
 
         public double CounterHeight { get; set; }
+
+        public int SettingsVersion { get; set; }
     }
 }
