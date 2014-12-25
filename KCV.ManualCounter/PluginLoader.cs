@@ -10,7 +10,7 @@ namespace Gizeta.KCV.ManualCounter
     [Export(typeof(IToolPlugin))]
     [ExportMetadata("Title", "KCV.ManualCounter")]
     [ExportMetadata("Description", "KanColleViewer手动计数插件。")]
-    [ExportMetadata("Version", "1.0.0")]
+    [ExportMetadata("Version", "1.1.0")]
     [ExportMetadata("Author", "@Gizeta")]
     public class PluginLoader : IToolPlugin
     {
