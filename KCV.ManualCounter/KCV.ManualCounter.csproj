@@ -34,8 +34,22 @@
       <HintPath>Libraries\Desktop.Metro.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="IronRuby, Version=1.1.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\IronRuby\IronRuby.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IronRuby.Libraries, Version=1.1.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\IronRuby\IronRuby.Libraries.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="KanColleViewer">
       <HintPath>Libraries\KanColleViewer.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="KanColleWrapper">
+      <HintPath>Libraries\KanColleWrapper.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Livet">
@@ -46,11 +60,38 @@
       <HintPath>Libraries\MetroRadiance.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\IronRuby\Microsoft.Dynamic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\IronRuby\Microsoft.Scripting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\IronRuby\Microsoft.Scripting.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>Libraries\System.Reactive.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>Libraries\System.Reactive.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>Libraries\System.Reactive.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,8 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="Utils\CounterDataTemplateSelector.cs" />
+    <Compile Include="Utils\EmbeddedAssemblyLoader.cs" />
     <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="Utils\NullableStringToIntConverter.cs" />
+    <Compile Include="Utils\RubyHost.cs" />
     <Compile Include="Views\CounterView.xaml.cs">
       <DependentUpon>CounterView.xaml</DependentUpon>
     </Compile>
@@ -92,7 +135,13 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Libraries\IronRuby\IronRuby.dll" />
+    <EmbeddedResource Include="Libraries\IronRuby\IronRuby.Libraries.dll" />
+    <EmbeddedResource Include="Libraries\IronRuby\Microsoft.Dynamic.dll" />
+    <EmbeddedResource Include="Libraries\IronRuby\Microsoft.Scripting.dll" />
+    <EmbeddedResource Include="Libraries\IronRuby\Microsoft.Scripting.Metadata.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

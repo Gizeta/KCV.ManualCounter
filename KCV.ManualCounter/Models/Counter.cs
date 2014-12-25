@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Xml.Serialization;
 using System.Linq.Expressions;
+using Gizeta.KCV.ManualCounter.Utils;
 
 namespace Gizeta.KCV.ManualCounter.Models
 {
@@ -172,6 +173,20 @@ namespace Gizeta.KCV.ManualCounter.Models
             }
         }
 
+        /* 这是一个蛋疼的产物 */
+        private string script = "";
+        public string Script
+        {
+            get { return script; }
+            set
+            {
+                script = value;
+
+                if (value.Length > 0)
+                    RubyHost.Instace.Execute(this); // Why IronRuby?
+            }
+        }
+
         [XmlIgnore]
         public double Progress
         {
@@ -179,7 +194,7 @@ namespace Gizeta.KCV.ManualCounter.Models
         }
 
         [XmlIgnore]
-        public double ProgressBarWidth // interal for release
+        public double ProgressBarWidth
         {
             get { return PluginSettings.Current.CounterWidth * this.Progress; }
         }

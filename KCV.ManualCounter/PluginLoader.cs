@@ -1,6 +1,8 @@
-﻿using Gizeta.KCV.ManualCounter.ViewModels;
+﻿using Gizeta.KCV.ManualCounter.Utils;
+using Gizeta.KCV.ManualCounter.ViewModels;
 using Gizeta.KCV.ManualCounter.Views;
 using Grabacr07.KanColleViewer.Composition;
+using System;
 using System.ComponentModel.Composition;
 
 namespace Gizeta.KCV.ManualCounter
@@ -19,6 +21,7 @@ namespace Gizeta.KCV.ManualCounter
             if (!hasInitialized)
             {
                 hasInitialized = true;
+                loadAssembly();
                 PluginSettings.Load();
                 PluginSettings.Current.Save();
                 CounterViewModel.Instance.Initialize();
@@ -38,6 +41,20 @@ namespace Gizeta.KCV.ManualCounter
         public object GetToolView()
         {
             return new CounterView { DataContext = CounterViewModel.Instance };
+        }
+
+        private void loadAssembly()
+        {
+            EmbeddedAssemblyLoader.Load("Gizeta.KCV.ManualCounter.Libraries.IronRuby.Microsoft.Dynamic.dll", "Microsoft.Dynamic.dll");
+            EmbeddedAssemblyLoader.Load("Gizeta.KCV.ManualCounter.Libraries.IronRuby.Microsoft.Scripting.dll", "Microsoft.Scripting.dll");
+            EmbeddedAssemblyLoader.Load("Gizeta.KCV.ManualCounter.Libraries.IronRuby.Microsoft.Scripting.Metadata.dll", "Microsoft.Scripting.Metadata.dll");
+            EmbeddedAssemblyLoader.Load("Gizeta.KCV.ManualCounter.Libraries.IronRuby.IronRuby.dll", "IronRuby.dll");
+            EmbeddedAssemblyLoader.Load("Gizeta.KCV.ManualCounter.Libraries.IronRuby.IronRuby.Libraries.dll", "IronRuby.Libraries.dll");
+
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
+                return EmbeddedAssemblyLoader.Get(args.Name);
+            };
         }
     }
 }

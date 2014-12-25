@@ -37,8 +37,15 @@
     <Reference Include="Desktop.Metro">
       <HintPath>..\KCV.ManualCounter\Libraries\Desktop.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="FiddlerCore4">
+      <HintPath>..\KCV.ManualCounter\Libraries\FiddlerCore4.dll</HintPath>
+    </Reference>
     <Reference Include="KanColleViewer">
       <HintPath>..\KCV.ManualCounter\Libraries\KanColleViewer.exe</HintPath>
+    </Reference>
+    <Reference Include="KanColleWrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KCV.ManualCounter\Libraries\KanColleWrapper.dll</HintPath>
     </Reference>
     <Reference Include="Livet">
       <HintPath>..\KCV.ManualCounter\Libraries\Livet.dll</HintPath>
@@ -54,6 +61,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\KCV.ManualCounter\Libraries\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\KCV.ManualCounter\Libraries\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\KCV.ManualCounter\Libraries\System.Reactive.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
