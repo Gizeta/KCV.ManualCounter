@@ -153,7 +153,7 @@ namespace Gizeta.KCV.ManualCounter.Models
                     isEditing = value;
                     this.RaisePropertyChanged();
 
-                    if(value)
+                    if(!value)
                         PluginSettings.Current.Save();
                 }
             }
@@ -216,16 +216,21 @@ namespace Gizeta.KCV.ManualCounter.Models
             if (totalValue == 0)
             {
                 this.CurrentValue++;
-                return;
-            }
-            if (currentValue >= totalValue)
-            {
-                if (autoReset)
-                    this.Reset();
             }
             else
             {
-                this.CurrentValue++;
+                if (currentValue >= totalValue)
+                {
+                    if (autoReset)
+                    {
+                        this.Reset();
+                        return;
+                    }
+                }
+                else
+                {
+                    this.CurrentValue++;
+                }
             }
 
             PluginSettings.Current.Save();
