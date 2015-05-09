@@ -7,7 +7,8 @@
              xmlns:viewmodel="clr-namespace:Gizeta.KCV.ManualCounter.ViewModels;assembly=KCV.ManualCounter"
              xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
              xmlns:metro2="clr-namespace:Grabacr07.Desktop.Metro.Controls;assembly=Desktop.Metro"
-             IsVisibleChanged="CounterView_IsVisibleChanged">
+             IsVisibleChanged="CounterView_IsVisibleChanged"
+             SizeChanged="CounterView_SizeChanged">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -154,7 +155,7 @@
     </UserControl.Resources>
 
     <Grid>
-        <ItemsControl Margin="8,8" ItemTemplateSelector="{StaticResource DataTemplateSelectorKey}" ItemsSource="{Binding Counters}">
+        <ItemsControl x:Name="CounterContainer" Margin="8,8" ItemTemplateSelector="{StaticResource DataTemplateSelectorKey}">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
